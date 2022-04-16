@@ -1,0 +1,65 @@
+<div class="row">
+    <!--<div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form #playerForm="ngForm" (ngSubmit)="addPlayer(playerForm)">
+                    <input type="hidden" name="_id" [(ngModel)]="selectedPlayer._id">
+                    <div class="form-group">
+                        <label for="nombre" class="form-label mt-4">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Escribe tu nombre" id="nombre" name="firstName" [(ngModel)]="selectedPlayer.firstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="Apellidos" class="form-label mt-4">Apellidos</label>
+                        <input type="text" class="form-control" placeholder="Escribe tu apellido" id="Apellidos" name="lastName" [(ngModel)]="selectedPlayer.lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad" class="form-label mt-4">Edad</label>
+                        <input type="number" class="form-control" placeholder="Escribe tu edad" id="edad" name="age" [(ngModel)]="selectedPlayer.age">
+                    </div>
+                    <div class="form-group">
+                        <label for="tag" class="form-label mt-4">Tag</label>
+                        <input type="text" class="form-control" placeholder="Escribe tu tag" id="tag" name="gameTag" [(ngModel)]="selectedPlayer.gameTag">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label mt-4">Email</label>
+                        <input type="email" class="form-control" placeholder="Escribe tu email" id="email" name="email" [(ngModel)]="selectedPlayer.email">
+                    </div>
+                    <button class="btn btn-primary" (click)="resetForm(playerForm)">
+                        Clean
+                    </button>
+                    <button class="btn btn-secondary" style="margin-left:10px">
+                        Save
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>-->
+    <div class="col-md-10">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        gameTag
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of playerService.players">
+                    <td>{{ player.firstName }} {{ player.lastName }}</td>
+                    <td>{{ player.age }}</td>
+                    <td>{{ player.gameTag }}</td>
+                    <!--<td>
+                        <a class="btn btn-secondary btn-sm" (click)="editPlayer(player)"><i class="material-icons">edit</i></a>
+                        <a class="btn btn-danger btn-sm" (click)="deletePlayer(player._id, playerForm)"><i class="material-icons">delete</i></a>
+                    </td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

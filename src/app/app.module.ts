@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuBarComponent } from './menu-bar/menu-bar.component';
-import { CalendarComponent } from './calendar/calendar.component';
-import { NewsComponent } from './news/news.component';
-import { RankingComponent } from './ranking/ranking.component';
-import { VideosComponent } from './videos/videos.component';
-import { ContactComponent } from './contact/contact.component';
-import { RulesComponent } from './rules/rules.component';
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { NewsComponent } from './components/news/news.component';
+import { RankingComponent } from './components/ranking/ranking.component';
+import { VideosComponent } from './components/videos/videos.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { RulesComponent } from './components/rules/rules.component';
+import { PlayersComponent } from './components/players/players.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,16 @@ import { RulesComponent } from './rules/rules.component';
     RankingComponent,
     VideosComponent,
     ContactComponent,
-    RulesComponent
+    RulesComponent,
+    PlayersComponent,
+    TeamsComponent,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

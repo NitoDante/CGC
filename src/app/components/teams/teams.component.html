@@ -1,0 +1,36 @@
+<div class="row">    
+    <div class="col-md-12">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        
+                    </th>
+                    <th>
+                        Team
+                    </th>
+                    <th>
+                        W/L LOL
+                    </th>
+                    <th>
+                        W/L Valorant
+                    </th>
+                    <th>
+                        Games
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let team of teamService.teams" [routerLink]="'/teamDetail'" [state]="team">
+                    <td><img [src]="team.logo"></td>
+                    <td>{{ team.name }}</td>
+                    <td>{{ team.winsLOL }} / {{ team.losesLOL}}</td>
+                    <td>{{ team.winsValo }} / {{ team.losesValo}}</td>
+                    <td>
+                        <img *ngFor="let game of team.games" [src]="this.renderImages(game)" style="width:30px;margin-left:10px">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
