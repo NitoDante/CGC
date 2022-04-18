@@ -12,4 +12,5 @@ export interface Team extends Array<Player>{
     updatedAt?: string;
     description: string;
     players: Array<Player>;
+    iconURL: string;
 }

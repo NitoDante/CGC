@@ -22,10 +22,10 @@
             </thead>
             <tbody>
                 <tr *ngFor="let team of teamService.teams" [routerLink]="'/teamDetail'" [state]="team">
-                    <td><img [src]="team.logo"></td>
-                    <td>{{ team.name }}</td>
-                    <td>{{ team.winsLOL }} / {{ team.losesLOL}}</td>
-                    <td>{{ team.winsValo }} / {{ team.losesValo}}</td>
+                    <td style="text-align:right;vertical-align: middle"><img style="width:50px;height:auto" [src]="team?.iconURL"></td>
+                    <td style="vertical-align: middle">{{ team.name }}</td>
+                    <td style="vertical-align: middle">{{ team.winsLOL }} / {{ team.losesLOL}}</td>
+                    <td style="vertical-align: middle">{{ team.winsValo }} / {{ team.losesValo}}</td>
                     <td>
                         <img *ngFor="let game of team.games" [src]="this.renderImages(game)" style="width:30px;margin-left:10px">
                     </td>

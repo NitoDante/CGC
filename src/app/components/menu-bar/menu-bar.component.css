@@ -1,7 +1,9 @@
 .nav{
     /*background-color: #0f1519;*/
     border-radius: 0.25rem;
-    font-size: 18px;
+    font-size: 0.975rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 /*
 .nav ul{

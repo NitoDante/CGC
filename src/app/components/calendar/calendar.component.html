@@ -1,1 +1,30 @@
-<p>calendar works!</p>
+<div class="row">    
+    <div class="col-md-12">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th style="text-align:left;">
+                        Team
+                    </th>
+                    <th></th>
+                    <th style="text-align:left;">
+                        Team
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let match of matchService.matches">
+                    <td style="text-align:right;vertical-align: middle"><img style="width:50px;height:auto" [src]="match.homeTeam.iconURL"/></td>
+                    <td style="vertical-align: middle;text-align:left">{{ match.homeTeam.name }}</td>
+                    <td style="text-align:right;vertical-align: middle"><img style="width:50px;height:auto" [src]="match.visitorTeam.iconURL"/></td>
+                    <td style="vertical-align: middle;text-align:left">{{ match.visitorTeam.name }}</td>
+                    <td>{{ match.matchDate | date:'dd/MM/yy HH:mm' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
