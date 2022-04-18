@@ -12,6 +12,8 @@ export class CalendarComponent implements OnInit {
 
   constructor(public matchService:MatchService, private router: Router) { }
 
+  groupedDate = '2022-01-01';
+
   ngOnInit(): void {
     this.getMatches();
   }
@@ -23,6 +25,17 @@ export class CalendarComponent implements OnInit {
       },
       err => console.log(err)
     )
+  }
+  checkDateStr(value:string){
+    if(this.groupedDate.substr(0,10) != value.substr(0,10)){
+      this.groupedDate = value;
+      return true;
+    }else{
+      return false;
+    }
+  }
+  checkDate(value:Date){
+    return this.groupedDate.substr(0,10) == value.toLocaleString().substr(0,10);
   }
 
 }

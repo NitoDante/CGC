@@ -3,27 +3,32 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th></th>
+                    <th colspan="2"></th>
                     <th style="text-align:left;">
                         Team
                     </th>
                     <th></th>
                     <th style="text-align:left;">
                         Team
-                    </th>
-                    <th>
-                        Date
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr *ngFor="let match of matchService.matches">
-                    <td style="text-align:right;vertical-align: middle"><img style="width:50px;height:auto" [src]="match.homeTeam.iconURL"/></td>
-                    <td style="vertical-align: middle;text-align:left">{{ match.homeTeam.name }}</td>
-                    <td style="text-align:right;vertical-align: middle"><img style="width:50px;height:auto" [src]="match.visitorTeam.iconURL"/></td>
-                    <td style="vertical-align: middle;text-align:left">{{ match.visitorTeam.name }}</td>
-                    <td>{{ match.matchDate | date:'dd/MM/yy HH:mm' }}</td>
+            <tbody *ngFor="let match of matchService.groupedDate | keyvalue">
+                <tr >
+                    <td colspan="5" *ngIf="checkDateStr(match.key)"> {{match.key | date : 'dd/MM/yy'}}</td>
                 </tr>
+                <ng-container *ngFor="let matchValue of match.value">
+                    <tr *ngIf="checkDate(matchValue.matchDate)">
+                        <td style="text-align:right;vertical-align: middle;margin-right:5px">
+                            {{matchValue.matchDate | date : 'HH:mm'}}
+                        </td>
+                        <td style="text-align:right;vertical-align: middle;margin-right:5px"><img style="width:50px;height:auto" [src]="matchValue.homeTeam.iconURL"/></td>
+                        <td style="vertical-align: middle;text-align:left;margin-right:5px">{{ matchValue.homeTeam.name }}</td>
+                        <td style="text-align:right;vertical-align: middle;margin-right:5px"><img style="width:50px;height:auto" [src]="matchValue.visitorTeam.iconURL"/></td>
+                        <td style="vertical-align: middle;text-align:left;margin-right:5px">{{ matchValue.visitorTeam.name }}</td>
+                        <!--<td>{{ matchValue.matchDate | date:'dd/MM/yy HH:mm' }}</td>-->
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </div>
