@@ -7,7 +7,8 @@ import { Player } from '../models/player';
 })
 export class PlayerService {
 
-  URL_API = 'http://localhost:3000/api/players'
+  //URL_API = 'http://localhost:3000/api/players'
+  URL_API = 'https://cgcserver.herokuapp.com/api/players';
 
   players!: Player[];
 

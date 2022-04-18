@@ -6,7 +6,8 @@ import { Team } from '../models/team';
   providedIn: 'root'
 })
 export class TeamService {
-  URL_API = 'http://localhost:3000/api/teams'
+  //URL_API = 'http://localhost:3000/api/teams'
+  URL_API = 'https://cgcserver.herokuapp.com/api/teams';
 
   teams!: Team[];
 
