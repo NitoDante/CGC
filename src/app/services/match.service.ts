@@ -7,24 +7,26 @@ import { Match } from '../models/match';
 })
 export class MatchService {
 
-  //URL_API = 'http://localhost:3000/api/matches'
-  URL_API = 'https://cgcserver.herokuapp.com/api/matches';
+  URL_API = 'http://localhost:3000/api/matches'
+  //URL_API = 'https://cgcserver.herokuapp.com/api/matches';
 
   matches!: Match[];
   groupedDate : Map<string, Match[]> = new Map<string,Match[]>();
 
   constructor(private http:HttpClient) { }
 
-  getMatches(){
-    console.log('matches: '+JSON.stringify(this.http.get<Match[]>(this.URL_API)));
-    this.http.get<Match[]>(this.URL_API).subscribe(
+  getMatches(game:string){
+    this.http.get<Match[]>(this.URL_API+'/?game='+game).subscribe(
       res => {
+        this.groupedDate.clear();
         res.forEach(element => {
+          console.log('element* : '+JSON.stringify(element))
           if(!this.groupedDate.has(element.matchDate.toLocaleString().substring(0,10))){
+            console.log('ENTRA*');
             this.groupedDate.set(element.matchDate.toLocaleString().substring(0,10),res);
           }
         })
-        debugger;
+        console.log(this.groupedDate);
       },
       err => console.log(err)
     )

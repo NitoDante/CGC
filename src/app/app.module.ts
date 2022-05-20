@@ -15,6 +15,8 @@ import { RulesComponent } from './components/rules/rules.component';
 import { PlayersComponent } from './components/players/players.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
+import { CalendarWrapperComponent } from './components/calendar-wrapper/calendar-wrapper.component';
+import { GameFilterComponent } from './components/game-filter/game-filter.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
     RulesComponent,
     PlayersComponent,
     TeamsComponent,
-    TeamDetailComponent
+    TeamDetailComponent,
+    CalendarWrapperComponent,
+    GameFilterComponent
   ],
   imports: [
     BrowserModule,

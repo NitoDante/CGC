@@ -1,0 +1,8 @@
+<table class="table table-striped table-hover">
+    <tbody>
+        <tr *ngFor="let game of gamesLst" (click)="filterTable(game.name)">
+            <td style="text-align:right;vertical-align: middle;margin-right:5px"><img style="width:30px;height:auto" [src]="game.gameLogo"/></td>
+            <td style="vertical-align: middle;text-align:left;margin-right:5px">{{ game.name }}</td>
+        </tr>
+    </tbody>
+</table>

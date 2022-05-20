@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarWrapperComponent } from './components/calendar-wrapper/calendar-wrapper.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NewsComponent } from './components/news/news.component';
 import { RankingComponent } from './components/ranking/ranking.component';
@@ -12,7 +12,7 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 
 const routes: Routes = [
-  { path: 'calendar', component: CalendarComponent },
+  { path: 'calendar', component: CalendarWrapperComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'news', component: NewsComponent },
   { path: 'ranking', component: RankingComponent },

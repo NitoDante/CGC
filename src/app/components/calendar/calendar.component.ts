@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatchService } from '../../services/match.service';
 import { Match } from '../../models/match';
 import { Router } from '@angular/router';
@@ -10,15 +10,33 @@ import { Router } from '@angular/router';
 })
 export class CalendarComponent implements OnInit {
 
-  constructor(public matchService:MatchService, private router: Router) { }
+  constructor(public matchService:MatchService, private router: Router, private cdRef : ChangeDetectorRef) {this._game = 'LOL'}
+  private _game: string;
+
+  @Input() 
+  set game(value: string){
+    this._game = value;
+    this.getMatches();
+  }
 
   groupedDate = '2022-01-01';
 
   ngOnInit(): void {
     this.getMatches();
   }
+  /*ngOnChanges(changes : SimpleChanges){
+    if(changes.game){
+      this.getMatches();
+    }
+  }*/
+  ngAfterViewChecked() {
+    this.cdRef.detectChanges();
+  }
   getMatches(){
-    this.matchService.getMatches().subscribe(
+    this.matchService.matches;
+    this.matchService.groupedDate.clear();
+    this.groupedDate = '2022-01-01';
+    this.matchService.getMatches(this._game).subscribe(
       res => {
         this.matchService.matches = res;
         console.log(this.matchService.matches);
