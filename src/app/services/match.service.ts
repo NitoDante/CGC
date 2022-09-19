@@ -7,8 +7,8 @@ import { Match } from '../models/match';
 })
 export class MatchService {
 
-  //URL_API = 'http://localhost:3000/api/matches'
-  URL_API = 'https://cgcserver.herokuapp.com/api/matches';
+  URL_API = 'http://localhost:3000/api/matches'
+  //URL_API = 'https://cgcserver.herokuapp.com/api/matches';
 
   matches!: Match[];
   groupedDate : Map<string, Match[]> = new Map<string,Match[]>();
