@@ -1,0 +1,16 @@
+<div class="card border-dark container topContainer" style="flex-direction:row;padding: 25px 0 25px 0;">
+    <!--<div class="row">-->
+        <div class="teamResult">
+            <img class="teamImg" [src]="match?.homeTeam?.iconURL"/>
+            <span class="teamName">{{ match?.homeTeam?.name }}</span>
+        </div>
+        <div class="teamResult">
+                <div class="container"><span style="font-size:50px">{{match?.homeScore}}</span> <span style="margin: 0 10px 0 10px">:</span> <span style="font-size:50px">{{match?.visitorScore}}</span></div>
+                <div>{{match?.matchDate | date: 'dd/MM/YYYY'}}</div>
+        </div>
+        <div class="teamResult">
+            <img class="teamImg" [src]="match?.visitorTeam?.iconURL"/>
+            <span class="teamName">{{ match?.visitorTeam?.name }}</span>
+        </div>
+    <!--</div>-->
+</div>

@@ -1,0 +1,22 @@
+.container{
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    max-width: 700px;
+}
+.teamResult{
+    text-align: center;
+    flex-direction:column;
+    display:flex;
+}
+.teamImg{
+    width:auto;
+    height:90px;
+    margin-left:15px
+}
+.teamName{
+    margin-top:5px;
+}
+.topContainer{
+    margin-top:50px;
+}

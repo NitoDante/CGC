@@ -1,0 +1,12 @@
+.not-empty-select.mat-selected {
+  color: white !important;
+}
+  
+:host /deep/ .mat-select-value-text {
+  color: white !important;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}

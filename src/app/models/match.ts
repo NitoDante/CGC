@@ -6,4 +6,7 @@ export interface Match extends Array<Team>{
     visitorTeam: Team;
     game: string;
     matchDate: Date;
+    homeScore:Number;
+    visitorScore:Number;
+    season: string;
 }

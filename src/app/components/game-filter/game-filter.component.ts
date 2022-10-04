@@ -12,17 +12,27 @@ export class GameFilterComponent implements OnInit {
 
   gamesLst: Games[] = [];
 
+  selectedLol = true;
+  selectedValo = false;
+
 
   ngOnInit(): void {
-    const lol = <Games>{name:"LOL",gameLogo:'../../../assets/images/LoL_icon.svg.png'};
-    const valorant = {name:"Valorant",gameLogo:'../../../assets/images/Valorant_icon.png'};
+    const lol = <Games>{name:"LOL",gameLogo:'../../../assets/images/LoL_icon.svg.png', selected:true};
+    const valorant = {name:"Valorant",gameLogo:'../../../assets/images/Valorant_icon.png', selected:false};
     this.gamesLst.push(lol);
     this.gamesLst.push(valorant);
   }
   
   @Output() emitter:EventEmitter<string> = new EventEmitter<string>();
-  filterTable(game:string){
-    this.emitter.emit(game);
+  filterTable(game:Games){
+    this.emitter.emit(game.name);
+    this.gamesLst.forEach(element => {
+      if(element.name == game.name){
+        element.selected = true;
+      }else{
+        element.selected = false;
+      }
+    });
   }
 
 }
