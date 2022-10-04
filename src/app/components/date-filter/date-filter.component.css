@@ -19,7 +19,7 @@
 }
 
 ::ng-deep mat-form-field .mat-form-field-ripple {
-  background-color: #157cfc!important;
+  background-color: #157cfc!important; 
 }
 
 mat-form-field{
